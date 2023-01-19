@@ -625,4 +625,4 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 beautiful.useless_gap = 5
 --Autostart
 awful.spawn.with_shell("fcitx -d")
-awful.spawn.with_shell("picom")
+--awful.spawn.with_shell("picom")
