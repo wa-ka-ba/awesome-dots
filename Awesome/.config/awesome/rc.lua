@@ -328,7 +328,9 @@ globalkeys = gears.table.join(
     awful.key({modkey}, "e", function () awful.spawn("pcmanfm") end,
               {description = "open file manager", group = "applications"}),
 	awful.key({modkey}, "r", function () awful.spawn("/home/wakaba/.config/rofi/launchers/type-7/launcher.sh") end,
-              {description = "open rofi", group = "launcher"}),
+              {description = "open rofi", group = "launcher"}),  
+    awful.key({ modkey, "Shift"   }, "l", function() awful.spawn("betterlockscreen -l blur 1") end,
+              {description = "Lock screen", group = "screen"}),    
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
