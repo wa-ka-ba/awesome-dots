@@ -35,6 +35,6 @@ Dotfiles for my awesomewm setup
 	export XMODIFIERS='@im=fcitx'<br>
 	<li>Restart or type the command: source .bashrc</li>
 	<li>Generate Locales by editing /etc/locale.gen and uncomment "ja_JP.UTF-8 UTF-8". Then type: sudo locale-gen</li>
-	<li>Add "fcitx -d" to autostart.sh of openbox</li>
+	<li>Add "fcitx -d" to autostart </li>
 	<li>Open fcitx-configtool in terminal. Then in Input Method, click the plus button on the lower left, unclick "Only show current langauge", search for Mozc, then click ok</li>
 </ol>
