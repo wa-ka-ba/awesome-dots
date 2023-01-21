@@ -93,3 +93,4 @@ export XMODIFIERS='@im=fcitx'
 
 #Alias
 alias neofetch="neofetch --kitty /home/wakaba/.config/neofetch/102585058_p0.png"
+alias killorphans="pacman -Qtdq | sudo pacman -Rns -"

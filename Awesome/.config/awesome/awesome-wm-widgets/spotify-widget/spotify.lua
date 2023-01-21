@@ -137,9 +137,9 @@ local function worker(user_args)
         if (button == 1) then
             awful.spawn("sp play", false)      -- left click
         elseif (button == 4) then
-            awful.spawn("sp next", false)  -- scroll up
+            awful.spawn("sp prev", false)  -- scroll up
         elseif (button == 5) then
-            awful.spawn("sp prev", false)  -- scroll down
+            awful.spawn("sp next", false)  -- scroll down
         end
         awful.spawn.easy_async(GET_SPOTIFY_STATUS_CMD, function(stdout, stderr, exitreason, exitcode)
             update_widget_icon(spotify_widget, stdout, stderr, exitreason, exitcode)
@@ -151,6 +151,8 @@ local function worker(user_args)
         local spotify_tooltip = awful.tooltip {
             mode = 'outside',
             preferred_positions = {'bottom'},
+            border_color = '#7E9CD8',
+            border_width = 1
          }
 
         spotify_tooltip:add_to_object(spotify_widget)

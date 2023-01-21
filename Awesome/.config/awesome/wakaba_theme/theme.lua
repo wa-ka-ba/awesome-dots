@@ -39,9 +39,10 @@ theme.tasklist_fg_focus = "#DCD7BA"
 
 -- {{{ Window Borders
 theme.useless_gap   = dpi(0)
-theme.border_width  = dpi(3)
+theme.border_width  = dpi(2)
 theme.border_normal = "#3F3F3F"
-theme.border_focus  = "#7E9CD8"
+--theme.border_focus  = "#7E9CD8"
+theme.border_focus  = "#7FB4CA"
 theme.border_marked = "#CC9393"
 -- }}}
 

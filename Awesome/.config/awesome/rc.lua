@@ -221,7 +221,7 @@ awful.screen.connect_for_each_screen(function(s)
 	--Create a run button
 	local runwidget = wibox.widget{
 		text = "  ",
-		font = "Sofia Pro Light 20",
+		font = "Sofia Pro Light 15",
 		widget = wibox.widget.textbox
 		}
 	runwidget:connect_signal("button::press",
@@ -229,15 +229,27 @@ awful.screen.connect_for_each_screen(function(s)
 	
 	--Create a powermenu button
 	local powermenu = wibox.widget{
-		text = " 襤 ",
-		font = "Sofia Pro Light 20",
+		text = " ⏻ ",
+		font = "Sofia Pro Light 15",
 		widget = wibox.widget.textbox
 		}
 	powermenu:connect_signal("button::press",
 		function() awful.spawn("/home/wakaba/.config/rofi/powermenu/type-5/powermenu.sh") end)
 	
+	--Create a systray widget
+	s.systray = wibox.widget.systray()
+	s.systray.visible = false
 	
-		
+	--Create a systray toggle widget
+	local systoggle = wibox.widget{
+	text = "",
+	font = "Sofia Pro Light 10",
+	widget = wibox.widget.textbox
+	}
+	systoggle:connect_signal("button::press",
+		function() awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible end
+	)
+	
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", height = 35, screen = s, border_width = 6, border_color = "#1F1F28", })
 
@@ -249,18 +261,26 @@ awful.screen.connect_for_each_screen(function(s)
             spacing = 15,
             runwidget,
             s.mytaglist,
-            spotify_widget(),
+            spotify_widget({
+				font = 'Sofia Pro Light 11',
+				play_icon = '/usr/share/icons/Arc/actions/24/player_play.png',
+				pause_icon = '/usr/share/icons/Arc/actions/24/player_pause.png',
+				max_length = 50,
+				dim_when_paused = true,
+				dim_opacity = 0.5
+			}),
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            spacing = 10,
+            spacing = 13,
             mykeyboardlayout,
             volume_widget{
 				widget_type = "icon_and_text"
             },
             mytextclock,
-            wibox.widget.systray(),
+            s.systray,
+            systoggle,
             s.mylayoutbox,
             powermenu,
         },
@@ -330,7 +350,9 @@ globalkeys = gears.table.join(
 	awful.key({modkey}, "r", function () awful.spawn("/home/wakaba/.config/rofi/launchers/type-7/launcher.sh") end,
               {description = "open rofi", group = "launcher"}),  
     awful.key({ modkey, "Shift"   }, "l", function() awful.spawn("betterlockscreen -l blur 1") end,
-              {description = "Lock screen", group = "screen"}),    
+              {description = "lock screen", group = "screen"}),    
+    awful.key({ modkey, "Shift"   }, "s", function() awful.spawn("flameshot gui") end,
+              {description = "take a screenshot", group = "applications"}),
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
@@ -548,7 +570,7 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     --{ rule_any = {type = { "normal", "dialog" }
-    { rule_any = {type = { "dialog" }
+    { rule_any = {type = { "normal", "dialog" }
       }, properties = { titlebars_enabled = true }
     },
 
@@ -589,7 +611,7 @@ client.connect_signal("request::titlebars", function(c)
 
     awful.titlebar(c) : setup {
         { -- Left
-            awful.titlebar.widget.iconwidget(c),
+        --  awful.titlebar.widget.iconwidget(c),
             buttons = buttons,
             layout  = wibox.layout.fixed.horizontal
         },
@@ -622,7 +644,8 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-beautiful.useless_gap = 5
+beautiful.useless_gap = 10
 --Autostart
 awful.spawn.with_shell("fcitx -d")
---awful.spawn.with_shell("picom")
+awful.spawn.with_shell("picom --experimental-backend")
+awful.spawn.with_shell("flameshot")
