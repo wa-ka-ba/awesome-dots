@@ -14,9 +14,9 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
--- Enable hotkeys help widget for VIM and other apps
+-- Enable hotkeys help widget for VIM and other apps (TMUX tips in popup)
 -- when client with a matching name is opened:
-require("awful.hotkeys_popup.keys")
+--require("awful.hotkeys_popup.keys")
 --Extra widgets
 local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
 local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
@@ -298,8 +298,14 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
-    awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
-              {description="show help", group="awesome"}),
+    --awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
+              --{description="show help", group="awesome"}),
+    awful.key({ modkey }, "s",  function ()  
+      local screen = awful.screen.focused()
+      hotkeys_popup.widget.new({
+      width = 800, height = 890, font = "Sofia Pro Light 13",
+      description_font = "Sofia Pro Light 12"}):show_help(nil, screen) end, 
+			  {description = "show help", group="awesome"}),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
@@ -569,8 +575,8 @@ awful.rules.rules = {
       }, properties = { floating = true }},
 
     -- Add titlebars to normal clients and dialogs
-    --{ rule_any = {type = { "normal", "dialog" }
     { rule_any = {type = { "normal", "dialog" }
+    --{ rule_any = {type = { "dialog" }
       }, properties = { titlebars_enabled = true }
     },
 
@@ -631,7 +637,7 @@ client.connect_signal("request::titlebars", function(c)
             awful.titlebar.widget.closebutton    (c),
             layout = wibox.layout.fixed.horizontal()
         },
-        layout = wibox.layout.align.horizontal
+        layout = wibox.layout.align.horizontal,
     }
 end)
 

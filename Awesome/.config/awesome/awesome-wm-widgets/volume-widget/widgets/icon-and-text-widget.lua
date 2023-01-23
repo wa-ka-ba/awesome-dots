@@ -14,7 +14,7 @@ function widget.get_widget(widgets_args)
     return wibox.widget {
         {
             {
-                id = "icon",
+                id = "icon", 
                 resize = false,
                 widget = wibox.widget.imagebox,
             },
