@@ -5,7 +5,6 @@ Dotfiles for my awesomewm setup
 <ul>
 	<li>Stow</li> 
 	<li>Terminal - Kitty</li>
-	<li>Nitrogen</li>
 	<li>Geany</li>
 	<li>lxappearance-gtk3</li>
 	<li>pcmanfm-gtk3</li>
