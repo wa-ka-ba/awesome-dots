@@ -3,7 +3,9 @@ Dotfiles for my awesomewm setup
 
 <h2>Programs/Requirements:</h2>
 <ul>
-	<li>Stow</li> 
+	<li>Stow</li>
+	<li>awesomewm</li>
+	<li>Dunst</li> 
 	<li>Terminal - Kitty</li>
 	<li>Geany</li>
 	<li>lxappearance-gtk3</li>
