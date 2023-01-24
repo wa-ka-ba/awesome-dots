@@ -151,8 +151,11 @@ local function worker(user_args)
         local spotify_tooltip = awful.tooltip {
             mode = 'outside',
             preferred_positions = {'bottom'},
-            border_color = '#7FB4CA',
-            border_width = 2
+            preferred_alignments = {'front'},
+            border_color = '#1F1F28',
+            border_width = 2,
+            margins = 10,
+            gaps = 10
          }
 
         spotify_tooltip:add_to_object(spotify_widget)

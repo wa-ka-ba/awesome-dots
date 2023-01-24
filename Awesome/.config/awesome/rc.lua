@@ -539,7 +539,7 @@ awful.rules.rules = {
                      keys = clientkeys,
                      buttons = clientbuttons,
                      screen = awful.screen.preferred,
-                     placement = awful.placement.no_overlap+awful.placement.no_offscreen
+                     placement = awful.placement.centered + awful.placement.no_overlap + awful.placement.no_offscreen
      }
     },
 
@@ -579,10 +579,17 @@ awful.rules.rules = {
     --{ rule_any = {type = { "dialog" }
       }, properties = { titlebars_enabled = true }
     },
-
+	
+	-- Removes titlebar on clients that already have it 
+	{ rule_any = {name = {"Lutris"}, 
+		},
+		properties = {titlebars_enabled = false }},
+		
     -- Set Firefox to always map on the tag named "2" on screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
+    -- Remove titlebars on clients that have it already
+    
 }
 -- }}}
 
@@ -599,8 +606,9 @@ client.connect_signal("manage", function (c)
         -- Prevent clients from being unreachable after screen count changes.
         awful.placement.no_offscreen(c)
     end
+    
 end)
-
+	
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal("request::titlebars", function(c)
     -- buttons for the titlebar

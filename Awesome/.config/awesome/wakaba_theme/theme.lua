@@ -55,7 +55,6 @@ theme.titlebar_bg_normal = "#3F3F3F"
 -- Example:
 --theme.taglist_bg_focus = "#CC9393"
 -- }}}
-
 -- {{{ Widgets
 -- You can add as many variables as
 -- you wish and access them by using
