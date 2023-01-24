@@ -1,1 +1,3 @@
-exec awesome
+dunst &
+exec awesome 
+
