@@ -62,10 +62,11 @@ mainbox {
 inputbar {
     enabled:                     true;
     spacing:                     0px;
-    padding:                     100px 80px;
+    padding:                     200px 80px;
     background-color:            transparent;
     background-image:            url("~/.config/rofi/images/a.png", width);
-    children:                    [ "textbox-prompt-colon", "dummy","prompt"];
+    /** children:                    [ "textbox-prompt-colon", "dummy","prompt"]; **/
+    children:                    ["dummy"];
 }
 
 dummy {

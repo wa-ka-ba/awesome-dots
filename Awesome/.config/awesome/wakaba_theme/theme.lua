@@ -8,7 +8,7 @@ theme.wallpaper = "~/.config/awesome/wallpaper.jpg"
 -- }}}
 
 -- {{{ Styles
-theme.font      = "Sofia Pro Light 14"
+theme.font      = "Sofia Pro Light 12"
 
 -- {{{ Colors
 theme.fg_normal  = "#DCD7BA"

@@ -221,7 +221,7 @@ awful.screen.connect_for_each_screen(function(s)
 	--Create a run button
 	local runwidget = wibox.widget{
 		text = "  ",
-		font = "Sofia Pro Light 15",
+		font = "Sofia Pro Light 13",
 		widget = wibox.widget.textbox
 		}
 	runwidget:connect_signal("button::press",
@@ -230,7 +230,7 @@ awful.screen.connect_for_each_screen(function(s)
 	--Create a powermenu button
 	local powermenu = wibox.widget{
 		text = " ⏻ ",
-		font = "Sofia Pro Light 15",
+		font = "Sofia Pro Light 13",
 		widget = wibox.widget.textbox
 		}
 	powermenu:connect_signal("button::press",
@@ -251,14 +251,14 @@ awful.screen.connect_for_each_screen(function(s)
 	)
 	
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", height = 35, screen = s, border_width = 6, border_color = "#1F1F28", })
+    s.mywibox = awful.wibar({ position = "top", height = 32, screen = s, border_width = 5, border_color = "#1F1F28", })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            spacing = 15,
+            spacing = 10,
             runwidget,
             s.mytaglist,
             spotify_widget({
