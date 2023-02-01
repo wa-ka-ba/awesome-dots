@@ -274,7 +274,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             spacing = 13,
-            mykeyboardlayout,
+            -- mykeyboardlayout,
             volume_widget{
 				widget_type = "icon_and_text"
             },
@@ -659,6 +659,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 beautiful.useless_gap = 10
+
 --Autostart
 awful.spawn.with_shell("fcitx -d")
 awful.spawn.with_shell("picom --experimental-backend")
