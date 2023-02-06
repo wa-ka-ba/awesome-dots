@@ -27,7 +27,8 @@ local function worker(user_args)
             weekend_day_bg = '#3B4252',
             weekday_fg = '#6A9589',
             header_fg = '#DCD7BA',
-            border = '#7E9CD8'
+            border = '#1F1F28'
+            -- border = '#7FB4CA'
         },
         outrun = {
             bg = '#0d0221',
@@ -194,7 +195,7 @@ local function worker(user_args)
         visible = false,
         shape = rounded_shape(radius),
         offset = { y = 5 },
-        border_width = 3,
+        border_width = 2,
         border_color = calendar_themes[theme].border,
         widget = cal
     }

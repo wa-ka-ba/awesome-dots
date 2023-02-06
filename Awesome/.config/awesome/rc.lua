@@ -49,7 +49,7 @@ end
 
 -- {{{ Variable definitions
 -- Sets THEME
-beautiful.init("/home/wakaba/.config/awesome/wakaba_theme/theme.lua")
+beautiful.init("~/.config/awesome/wakaba_theme/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
@@ -70,8 +70,8 @@ awful.layout.layouts = {
     --awful.layout.suit.tile.left,
     -- awful.layout.suit.tile.bottom,
     -- awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
+    -- awful.layout.suit.fair,
+    -- awful.layout.suit.fair.horizontal,
     -- awful.layout.suit.spiral,
     -- awful.layout.suit.spiral.dwindle,
     -- awful.layout.suit.max,
@@ -355,7 +355,7 @@ globalkeys = gears.table.join(
               {description = "open file manager", group = "applications"}),
 	awful.key({modkey}, "r", function () awful.spawn("/home/wakaba/.config/rofi/launchers/type-7/launcher.sh") end,
               {description = "open rofi", group = "launcher"}),  
-    awful.key({ modkey, "Control"   }, "l", function() awful.spawn("betterlockscreen -l blur 1") end,
+    awful.key({ modkey,  "Mod1"    }, "l", function() awful.spawn("betterlockscreen -l blur 1") end,
               {description = "lock screen", group = "screen"}),    
     awful.key({ modkey, "Shift"   }, "s", function() awful.spawn("flameshot gui") end,
               {description = "take a screenshot", group = "applications"}),
@@ -658,7 +658,7 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-beautiful.useless_gap = 10
+beautiful.useless_gap = 5
 
 --Autostart
 awful.spawn.with_shell("fcitx -d")
