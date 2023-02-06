@@ -3,7 +3,7 @@ local dpi = require("beautiful.xresources").apply_dpi
 
 -- {{{ Main
 local theme = {}
-theme.wallpaper = "~/.config/awesome/wallpaper.jpg"
+--theme.wallpaper = "~/.config/awesome/wallpapers/wallpaper.jpg"
 
 -- }}}
 
