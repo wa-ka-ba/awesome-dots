@@ -1,4 +1,4 @@
 dunst &
-nitrogen --restore &
+# nitrogen --restore &
 exec awesome 
 
