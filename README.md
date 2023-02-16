@@ -13,15 +13,15 @@ Dotfiles for my awesomewm setup
 	<li>gvfs (for trash)</li>
 	<li>Rofi</li>
 	<li><a href=https://github.com/pijulius/picom> pijulius' picom github </a> | <a href=https://aur.archlinux.org/packages/picom-pijulius-git> AUR </a></li>
-	<li>Betterlockscreen</li>
+	<li>Betterlockscreen (aur)</li>
 </ul>
 
 <h2>Fonts:</h2>
 <ul>
 	<li>Sofia Pro Light</li>
 	<li>Japanese Fonts (fcitx, mozc): <a href=https://archlinux.org/packages/?name=ttf-hanazono>ttf-hanazono</a>
-	<li>Icon: <a href=https://aur.archlinux.org/packages/ttf-material-design-iconic-font>Material Design Iconic</a>, nerd-fonts-jetbrains-mono</li>
-	<li>Glyph: nerd-fonts-meslo</li>
+	<li>Icon: <a href=https://aur.archlinux.org/packages/ttf-material-design-iconic-font>ttf-material-design-iconic-font</a>, nerd-fonts-jetbrains-mono (aur)</li>
+	<li>Glyph: ttf-meslo-nerd</li>
 </ul>
 
 <h3>To install Japanese fonts</h3>
