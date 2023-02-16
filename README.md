@@ -20,7 +20,7 @@ Dotfiles for my awesomewm setup
 <ul>
 	<li>Sofia Pro Light</li>
 	<li>Japanese Fonts (fcitx, mozc): <a href=https://archlinux.org/packages/?name=ttf-hanazono>ttf-hanazono</a>
-	<li>Icon: <a href=https://aur.archlinux.org/packages/ttf-material-design-iconic-font>ttf-material-design-iconic-font</a>, nerd-fonts-jetbrains-mono (aur)</li>
+	<li>Icon: <a href=https://aur.archlinux.org/packages/ttf-material-design-iconic-font>ttf-material-design-iconic-font (aur)</a>, nerd-fonts-jetbrains-mono (aur)</li>
 	<li>Glyph: ttf-meslo-nerd</li>
 </ul>
 
