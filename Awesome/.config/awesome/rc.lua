@@ -71,7 +71,7 @@ awful.layout.layouts = {
     -- awful.layout.suit.tile.bottom,
     -- awful.layout.suit.tile.top,
     -- awful.layout.suit.fair,
-    -- awful.layout.suit.fair.horizontal,
+    awful.layout.suit.fair.horizontal,
     -- awful.layout.suit.spiral,
     -- awful.layout.suit.spiral.dwindle,
     -- awful.layout.suit.max,
@@ -291,8 +291,8 @@ end)
 -- {{{ Mouse bindings
 root.buttons(gears.table.join(
     awful.button({ }, 3, function () mymainmenu:toggle() end),
-    awful.button({ }, 4, awful.tag.viewnext),
-    awful.button({ }, 5, awful.tag.viewprev)
+    awful.button({ }, 5, awful.tag.viewnext),
+    awful.button({ }, 4, awful.tag.viewprev)
 ))
 -- }}}
 
@@ -658,9 +658,10 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-beautiful.useless_gap = 5
+beautiful.useless_gap = 7
 
 --Autostart
 awful.spawn.with_shell("fcitx -d")
 awful.spawn.with_shell("picom --experimental-backend")
 awful.spawn.with_shell("flameshot")
+awful.spawn.with_shell("qbittorrent")
