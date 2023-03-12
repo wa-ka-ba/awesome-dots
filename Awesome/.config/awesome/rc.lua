@@ -351,7 +351,7 @@ globalkeys = gears.table.join(
 	-- Applications
 	awful.key({modkey}, "b", function () awful.spawn("firefox") end,
               {description = "open firefox", group = "applications"}),
-    awful.key({modkey}, "e", function () awful.spawn("pcmanfm") end,
+    awful.key({modkey}, "e", function () awful.spawn("nemo") end,
               {description = "open file manager", group = "applications"}),
 	awful.key({modkey}, "r", function () awful.spawn("/home/wakaba/.config/rofi/launchers/type-7/launcher.sh") end,
               {description = "open rofi", group = "launcher"}),  
@@ -581,14 +581,13 @@ awful.rules.rules = {
     },
 	
 	-- Removes titlebar on clients that already have it 
-	{ rule_any = {name = {"Lutris"}, 
+	{ rule_any = {name = {"Lutris", "osu!", "Szyszka"}, 
 		},
 		properties = {titlebars_enabled = false }},
 		
     -- Set Firefox to always map on the tag named "2" on screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
-    -- Remove titlebars on clients that have it already
     
 }
 -- }}}
@@ -664,4 +663,4 @@ beautiful.useless_gap = 7
 awful.spawn.with_shell("fcitx -d")
 awful.spawn.with_shell("picom --experimental-backend")
 awful.spawn.with_shell("flameshot")
-awful.spawn.with_shell("qbittorrent")
+

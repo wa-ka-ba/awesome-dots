@@ -9,7 +9,7 @@ Dotfiles for my awesomewm setup
 	<li>Terminal - Kitty</li>
 	<li>Geany</li>
 	<li>lxappearance-gtk3</li>
-	<li>pcmanfm-gtk3</li>
+	<li>nemo</li>
 	<li>gvfs (for trash)</li>
 	<li>Rofi</li>
 	<li><a href=https://github.com/pijulius/picom> pijulius' picom github </a> | <a href=https://aur.archlinux.org/packages/picom-pijulius-git> AUR </a></li>
